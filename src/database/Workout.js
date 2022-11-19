@@ -2,7 +2,6 @@
 const DB = require("./db.json");
 const { saveToDatabase } = require("./utils");
 
-
 /**
  * @openapi
  * components:
@@ -10,12 +9,12 @@ const { saveToDatabase } = require("./utils");
  *     Workout:
  *       type: object
  *       properties:
- *         id: 
+ *         id:
  *           type: string
  *           example: 61dbae02-c147-4e28-863c-db7bd402b2d6
- *         name: 
+ *         name:
  *           type: string
- *           example: Tommy V  
+ *           example: Tommy V
  *         mode:
  *           type: string
  *           example: For Time
@@ -32,7 +31,7 @@ const { saveToDatabase } = require("./utils");
  *         createdAt:
  *           type: string
  *           example: 4/20/2022, 2:21:56 PM
- *         updatedAt: 
+ *         updatedAt:
  *           type: string
  *           example: 4/20/2022, 2:21:56 PM
  *         trainerTips:
@@ -45,13 +44,20 @@ const { saveToDatabase } = require("./utils");
 const getAllWorkouts = (filterParams) => {
   try {
     let workouts = DB.workouts;
+    const limit = filterParams.limit ? filterParams.limit : 10;
+    const page = filterParams.page ? filterParams.page : 1;
     if (filterParams.mode) {
-      return DB.workouts.filter((workout) =>
+      workouts = workouts.filter((workout) =>
         workout.mode.toLowerCase().includes(filterParams.mode)
       );
     }
     // Other if-statements will go here for different parameters
-    return workouts;
+    //..
+
+    //pagination
+    return workouts.filter(
+      (_workout, index) => index >= (page - 1) * limit && index < page * limit
+    );
   } catch (error) {
     throw { status: 500, message: error };
   }

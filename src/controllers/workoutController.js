@@ -2,10 +2,18 @@
 const workoutService = require("../services/workoutService");
 
 const getAllWorkouts = (req, res) => {
-  const { mode } = req.query;
+  const { mode, page, limit } = req.query;
   try {
-    const allWorkouts = workoutService.getAllWorkouts({ mode });
-    res.send({ status: "OK", data: allWorkouts });
+    const allWorkouts = workoutService.getAllWorkouts({ mode, page, limit });
+    res.send({
+      status: "OK",
+      data: allWorkouts,
+      paging: {
+        total: 10,
+        page: 1,
+        pages: 2,
+      },
+    });
   } catch (error) {
     res
       .status(error?.status || 500)
@@ -18,12 +26,10 @@ const getOneWorkout = (req, res) => {
     params: { workoutId },
   } = req;
   if (!workoutId) {
-    res
-      .status(400)
-      .send({
-        status: "FAILED",
-        data: { error: "Parameter ':workoutId' can not be empty" },
-      });
+    res.status(400).send({
+      status: "FAILED",
+      data: { error: "Parameter ':workoutId' can not be empty" },
+    });
   }
   try {
     const workout = workoutService.getOneWorkout(workoutId);
@@ -44,15 +50,13 @@ const createNewWorkout = (req, res) => {
     !body.exercises ||
     !body.trainerTips
   ) {
-    res
-      .status(400)
-      .send({
-        status: "FAILED",
-        data: {
-          error:
-            "One of the following keys is missing or is empty in request body: 'name', 'mode', 'equipment', 'exercises', 'trainerTips'",
-        },
-      });
+    res.status(400).send({
+      status: "FAILED",
+      data: {
+        error:
+          "One of the following keys is missing or is empty in request body: 'name', 'mode', 'equipment', 'exercises', 'trainerTips'",
+      },
+    });
     return;
   }
   const newWorkout = {
@@ -78,12 +82,10 @@ const updateOneWorkout = (req, res) => {
     params: { workoutId },
   } = req;
   if (!workoutId) {
-    res
-      .status(400)
-      .send({
-        status: "FAILED",
-        data: { error: "Parameter ':workoutId' can not be empty" },
-      });
+    res.status(400).send({
+      status: "FAILED",
+      data: { error: "Parameter ':workoutId' can not be empty" },
+    });
   }
   try {
     const updatedWorkout = workoutService.updateOneWorkout(workoutId, body);
@@ -100,12 +102,10 @@ const deleteOneWorkout = (req, res) => {
     params: { workoutId },
   } = req;
   if (!workoutId) {
-    res
-      .status(400)
-      .send({
-        status: "FAILED",
-        data: { error: "Parameter ':workoutId' can not be empty" },
-      });
+    res.status(400).send({
+      status: "FAILED",
+      data: { error: "Parameter ':workoutId' can not be empty" },
+    });
   }
   try {
     workoutService.deleteOneWorkout(workoutId);
