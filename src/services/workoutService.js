@@ -1,4 +1,3 @@
-// In src/services/workoutService.js
 const { v4: uuid } = require("uuid");
 const Workout = require("../database/Workout");
 

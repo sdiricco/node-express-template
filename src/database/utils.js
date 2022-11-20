@@ -1,4 +1,3 @@
-// In src/database/utils.js
 const fs = require("fs");
 
 const saveToDatabase = (DB) => {
