@@ -4,8 +4,8 @@ const Workout = require("../database/Workout");
 
 const getAllWorkouts = (filterParams) => {
   try {
-    const allWorkouts = Workout.getAllWorkouts(filterParams);
-    return allWorkouts;
+    const data = Workout.getAllWorkouts(filterParams);
+    return data;
   } catch (error) {
     throw error;
   }
@@ -45,7 +45,8 @@ const updateOneWorkout = (workoutId, changes) => {
 
 const deleteOneWorkout = (workoutId) => {
   try {
-    Workout.deleteOneWorkout(workoutId);
+    const deleltedWorkout = Workout.deleteOneWorkout(workoutId);
+    return deleltedWorkout;
   } catch (error) {
     throw error;
   }

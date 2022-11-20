@@ -1,89 +1,224 @@
 {
   "workouts": [
     {
-      "id": "61dbae02-c147-4e28-863c-db7bd402b2d6",
-      "name": "Tommy V",
-      "mode": "For Time",
-      "equipment": ["barbell", "rope"],
-      "exercises": [
-        "21 thrusters",
-        "12 rope climbs, 15 ft",
-        "15 thrusters",
-        "9 rope climbs, 15 ft",
-        "9 thrusters",
-        "6 rope climbs, 15 ft"
-      ],
-      "createdAt": "4/20/2022, 2:21:56 PM",
-      "updatedAt": "4/20/2022, 2:21:56 PM",
-      "trainerTips": [
-        "Split the 21 thrusters as needed",
-        "Try to do the 9 and 6 thrusters unbroken",
-        "RX Weights: 115lb/75lb"
-      ]
-    },
-    {
-      "id": "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
-      "name": "Dead Push-Ups",
-      "mode": "AMRAP 10",
-      "equipment": ["barbell"],
-      "exercises": ["15 deadlifts", "15 hand-release push-ups"],
-      "createdAt": "1/25/2022, 1:15:44 PM",
-      "updatedAt": "3/10/2022, 8:21:56 AM",
-      "trainerTips": [
-        "Deadlifts are meant to be light and fast",
-        "Try to aim for unbroken sets",
-        "RX Weights: 135lb/95lb"
-      ]
-    },
-    {
-      "id": "d8be2362-7b68-4ea4-a1f6-03f8bc4eede7",
-      "name": "Heavy DT",
-      "mode": "5 Rounds For Time",
-      "equipment": ["barbell", "rope"],
-      "exercises": ["12 deadlifts", "9 hang power cleans", "6 push jerks"],
-      "createdAt": "11/20/2021, 5:39:07 PM",
-      "updatedAt": "4/22/2022, 5:49:18 PM",
-      "trainerTips": [
-        "Aim for unbroken push jerks",
-        "The first three rounds might feel terrible, but stick to it",
-        "RX Weights: 205lb/145lb"
-      ]
-    },
-    {
-      "name": "Core Buster",
+      "name": "workout name 1",
       "mode": "AMRAP 20",
-      "equipment": ["rack", "barbell", "abmat"],
-      "exercises": ["15 toes to bars", "10 thrusters", "30 abmat sit-ups"],
+      "equipment": [
+        "rack",
+        "barbell",
+        "abmat"
+      ],
+      "exercises": [
+        "25 toes to bars",
+        "25 thrusters",
+        "25 abmat sit-ups"
+      ],
       "trainerTips": [
-        "Split your toes to bars in two sets maximum",
+        "Split your toes to bars into two sets maximum",
         "Go unbroken on the thrusters",
         "Take the abmat sit-ups as a chance to normalize your breath"
       ],
-      "id": "a24d2618-01d1-4682-9288-8de1343e53c7",
-      "createdAt": "4/22/2022, 5:50:17 PM",
-      "updatedAt": "4/22/2022, 5:50:17 PM"
-    }
-  ],
-  "records": [
-    {
-      "id": "ad75d475-ac57-44f4-a02a-8f6def58ff56",
-      "workout": "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
-      "record": "160 reps"
+      "id": "6674c9f5-36ab-4ab1-b143-14626d14e9c3",
+      "createdAt": "11/20/2022, 6:38:34 PM",
+      "updatedAt": "11/20/2022, 7:12:49 PM"
     },
     {
-      "id": "0bff586f-2017-4526-9e52-fe3ea46d55ab",
-      "workout": "d8be2362-7b68-4ea4-a1f6-03f8bc4eede7",
-      "record": "7:23 minutes"
+      "name": "workout name 2",
+      "mode": "AMRAP 20",
+      "equipment": [
+        "rack",
+        "barbell",
+        "abmat"
+      ],
+      "exercises": [
+        "15 toes to bars",
+        "10 thrusters",
+        "30 abmat sit-ups"
+      ],
+      "trainerTips": [
+        "Split your toes to bars into two sets maximum",
+        "Go unbroken on the thrusters",
+        "Take the abmat sit-ups as a chance to normalize your breath"
+      ],
+      "id": "8ac3286d-4f77-4438-9e16-9790add38a5a",
+      "createdAt": "11/20/2022, 6:54:36 PM",
+      "updatedAt": "11/20/2022, 6:54:36 PM"
     },
     {
-      "id": "365cc0bb-ba8f-41d3-bf82-83d041d38b82",
-      "workout": "a24d2618-01d1-4682-9288-8de1343e53c7",
-      "record": "358 reps"
+      "name": "workout name 3",
+      "mode": "AMRAP 20",
+      "equipment": [
+        "rack",
+        "barbell",
+        "abmat"
+      ],
+      "exercises": [
+        "15 toes to bars",
+        "10 thrusters",
+        "30 abmat sit-ups"
+      ],
+      "trainerTips": [
+        "Split your toes to bars into two sets maximum",
+        "Go unbroken on the thrusters",
+        "Take the abmat sit-ups as a chance to normalize your breath"
+      ],
+      "id": "1e25cdb6-c301-43c6-ae47-19c71860f591",
+      "createdAt": "11/20/2022, 6:54:49 PM",
+      "updatedAt": "11/20/2022, 6:54:49 PM"
     },
     {
-      "id": "62251cfe-fdb6-4fa6-9a2d-c21be93ac78d",
-      "workout": "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
-      "record": "145 reps"
+      "name": "workout name 4",
+      "mode": "AMRAP 20",
+      "equipment": [
+        "rack",
+        "barbell",
+        "abmat"
+      ],
+      "exercises": [
+        "15 toes to bars",
+        "10 thrusters",
+        "30 abmat sit-ups"
+      ],
+      "trainerTips": [
+        "Split your toes to bars into two sets maximum",
+        "Go unbroken on the thrusters",
+        "Take the abmat sit-ups as a chance to normalize your breath"
+      ],
+      "id": "13c72788-71a9-479b-a54e-2140a127ead9",
+      "createdAt": "11/20/2022, 6:54:55 PM",
+      "updatedAt": "11/20/2022, 6:54:55 PM"
+    },
+    {
+      "name": "workout name 5",
+      "mode": "AMRAP 20",
+      "equipment": [
+        "rack",
+        "barbell",
+        "abmat"
+      ],
+      "exercises": [
+        "15 toes to bars",
+        "10 thrusters",
+        "30 abmat sit-ups"
+      ],
+      "trainerTips": [
+        "Split your toes to bars into two sets maximum",
+        "Go unbroken on the thrusters",
+        "Take the abmat sit-ups as a chance to normalize your breath"
+      ],
+      "id": "76602987-f23b-4bc4-8786-c4a0444bc535",
+      "createdAt": "11/20/2022, 6:55:02 PM",
+      "updatedAt": "11/20/2022, 6:55:02 PM"
+    },
+    {
+      "name": "workout name 6",
+      "mode": "AMRAP 20",
+      "equipment": [
+        "rack",
+        "barbell",
+        "abmat"
+      ],
+      "exercises": [
+        "15 toes to bars",
+        "10 thrusters",
+        "30 abmat sit-ups"
+      ],
+      "trainerTips": [
+        "Split your toes to bars into two sets maximum",
+        "Go unbroken on the thrusters",
+        "Take the abmat sit-ups as a chance to normalize your breath"
+      ],
+      "id": "a815018b-5da5-420b-a3dd-0f2bfee623e0",
+      "createdAt": "11/20/2022, 6:56:09 PM",
+      "updatedAt": "11/20/2022, 6:56:09 PM"
+    },
+    {
+      "name": "workout name 7",
+      "mode": "AMRAP 20",
+      "equipment": [
+        "rack",
+        "barbell",
+        "abmat"
+      ],
+      "exercises": [
+        "15 toes to bars",
+        "10 thrusters",
+        "30 abmat sit-ups"
+      ],
+      "trainerTips": [
+        "Split your toes to bars into two sets maximum",
+        "Go unbroken on the thrusters",
+        "Take the abmat sit-ups as a chance to normalize your breath"
+      ],
+      "id": "9c869b91-87a3-4baf-ae15-0ae5d97cae89",
+      "createdAt": "11/20/2022, 6:56:14 PM",
+      "updatedAt": "11/20/2022, 6:56:14 PM"
+    },
+    {
+      "name": "workout name 8",
+      "mode": "AMRAP 20",
+      "equipment": [
+        "rack",
+        "barbell",
+        "abmat"
+      ],
+      "exercises": [
+        "15 toes to bars",
+        "10 thrusters",
+        "30 abmat sit-ups"
+      ],
+      "trainerTips": [
+        "Split your toes to bars into two sets maximum",
+        "Go unbroken on the thrusters",
+        "Take the abmat sit-ups as a chance to normalize your breath"
+      ],
+      "id": "ffcc00af-f511-4e0e-a47f-53bb3593df21",
+      "createdAt": "11/20/2022, 6:56:19 PM",
+      "updatedAt": "11/20/2022, 6:56:19 PM"
+    },
+    {
+      "name": "workout name 9",
+      "mode": "AMRAP 20",
+      "equipment": [
+        "rack",
+        "barbell",
+        "abmat"
+      ],
+      "exercises": [
+        "15 toes to bars",
+        "10 thrusters",
+        "30 abmat sit-ups"
+      ],
+      "trainerTips": [
+        "Split your toes to bars into two sets maximum",
+        "Go unbroken on the thrusters",
+        "Take the abmat sit-ups as a chance to normalize your breath"
+      ],
+      "id": "16c29197-8bac-44dd-b6c4-a6b1f8ed895c",
+      "createdAt": "11/20/2022, 6:56:23 PM",
+      "updatedAt": "11/20/2022, 6:56:23 PM"
+    },
+    {
+      "name": "workout name 10",
+      "mode": "AMRAP 20",
+      "equipment": [
+        "rack",
+        "barbell",
+        "abmat"
+      ],
+      "exercises": [
+        "15 toes to bars",
+        "10 thrusters",
+        "30 abmat sit-ups"
+      ],
+      "trainerTips": [
+        "Split your toes to bars into two sets maximum",
+        "Go unbroken on the thrusters",
+        "Take the abmat sit-ups as a chance to normalize your breath"
+      ],
+      "id": "c4178819-1cdf-44e4-9238-6191e71506dd",
+      "createdAt": "11/20/2022, 6:56:28 PM",
+      "updatedAt": "11/20/2022, 6:56:28 PM"
     }
   ]
 }

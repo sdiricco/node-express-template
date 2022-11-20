@@ -4,15 +4,11 @@ const workoutService = require("../services/workoutService");
 const getAllWorkouts = (req, res) => {
   const { mode, page, limit } = req.query;
   try {
-    const allWorkouts = workoutService.getAllWorkouts({ mode, page, limit });
+    const data = workoutService.getAllWorkouts({ mode, page, limit });
     res.send({
       status: "OK",
-      data: allWorkouts,
-      paging: {
-        total: 10,
-        page: 1,
-        pages: 2,
-      },
+      data: data.workouts,
+      paging: data.paging
     });
   } catch (error) {
     res
@@ -108,8 +104,8 @@ const deleteOneWorkout = (req, res) => {
     });
   }
   try {
-    workoutService.deleteOneWorkout(workoutId);
-    res.status(204).send({ status: "OK" });
+    const deletedWorkout = workoutService.deleteOneWorkout(workoutId);
+    res.send({ status: "OK", data: deletedWorkout });
   } catch (error) {
     res
       .status(error?.status || 500)

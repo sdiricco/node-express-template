@@ -43,21 +43,32 @@ const { saveToDatabase } = require("./utils");
 
 const getAllWorkouts = (filterParams) => {
   try {
-    let workouts = DB.workouts;
-    const limit = filterParams.limit ? filterParams.limit : 10;
-    const page = filterParams.page ? filterParams.page : 1;
+    let result = {
+      workouts: DB.workouts,
+      paging: {
+        limit: filterParams.limit ? parseInt(filterParams.limit) : 10,
+        page: filterParams.page ? parseInt(filterParams.page) : 1,
+        pages: 1
+      }
+    }
     if (filterParams.mode) {
-      workouts = workouts.filter((workout) =>
+      result.workouts = result.workouts.filter((workout) =>
         workout.mode.toLowerCase().includes(filterParams.mode)
       );
     }
     // Other if-statements will go here for different parameters
     //..
 
+    result.paging.pages = Math.ceil(result.workouts.length / result.paging.limit);
+
     //pagination
-    return workouts.filter(
-      (_workout, index) => index >= (page - 1) * limit && index < page * limit
-    );
+    result.workouts = result.workouts.filter((_workout, index) => {
+      const page = result.paging.page
+      const limit = result.paging.limit
+      return index >= (page - 1) * limit && index < page * limit
+    });
+
+    return result;
   } catch (error) {
     throw { status: 500, message: error };
   }
@@ -98,14 +109,6 @@ const createNewWorkout = (newWorkout) => {
 
 const updateOneWorkout = (workoutId, changes) => {
   try {
-    const isAlreadyAdded =
-      DB.workouts.findIndex((workout) => workout.name === changes.name) > -1;
-    if (isAlreadyAdded) {
-      throw {
-        status: 400,
-        message: `Workout with the name '${changes.name}' already exists`,
-      };
-    }
     const indexForUpdate = DB.workouts.findIndex(
       (workout) => workout.id === workoutId
     );
@@ -139,8 +142,10 @@ const deleteOneWorkout = (workoutId) => {
         message: `Can't find workout with the id '${workoutId}'`,
       };
     }
+    const deletedWorkout = DB.workouts[indexForDeletion];
     DB.workouts.splice(indexForDeletion, 1);
     saveToDatabase(DB);
+    return deletedWorkout;
   } catch (error) {
     throw { status: error?.status || 500, message: error?.message || error };
   }
